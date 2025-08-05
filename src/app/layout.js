@@ -1,4 +1,5 @@
 import { Poppins, Open_Sans } from "next/font/google";
+import { FloatingWhatsApp } from 'react-floating-whatsapp';
 import "./globals.css";
 
 const poppins = Poppins({
