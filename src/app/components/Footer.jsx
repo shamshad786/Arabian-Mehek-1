@@ -1,5 +1,6 @@
 import React from 'react';
-import { Instagram, Facebook, Twitter, Linkedin } from 'lucide-react';
+import { FaFacebookF,FaInstagram,FaTwitter,FaWhatsapp   } from "react-icons/fa";
+
 
 const Footer = () => {
   return (
@@ -19,24 +20,24 @@ const Footer = () => {
           <div className="flex flex-col items-center space-y-4">
             <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-widest">Stay in touch</h3>
             <div className="flex space-x-4">
-              <a href="#" aria-label="Instagram" className="text-gray-500 hover:text-amber-300 transition-colors duration-200">
-                <Instagram size={24} />
+              <a href="#" aria-label="Instagram" className="text-gray-500 hover:text-blue-500 transition-colors duration-200">
+                <FaFacebookF size={24} />
               </a>
-              <a href="#" aria-label="Facebook" className="text-gray-500 hover:text-amber-300 transition-colors duration-200">
-                <Facebook size={24} />
+              <a href="#" aria-label="Facebook" className="text-gray-500 hover:text-pink-500 transition-colors duration-200">
+                <FaInstagram size={24} />
               </a>
-              <a href="#" aria-label="Twitter" className="text-gray-500 hover:text-amber-300 transition-colors duration-200">
-                <Twitter size={24} />
+              <a href="#" aria-label="Twitter" className="text-gray-500 hover:text-blue-300 transition-colors duration-200">
+                <FaTwitter size={24} />
               </a>
-              <a href="#" aria-label="LinkedIn" className="text-gray-500 hover:text-amber-300 transition-colors duration-200">
-                <Linkedin size={24} />
+              <a href="#" aria-label="LinkedIn" className="text-gray-500 hover:text-green-400 transition-colors duration-200">
+                <FaWhatsapp  size={24} />
               </a>
             </div>
           </div>
         </div>
         <hr className="my-8 md:my-12 border-gray-200" />
         <div className="flex justify-center text-center text-gray-500 text-sm">
-          &copy; 2025 Whitespace UI. All rights reserved.
+          &copy; 2025 Arabian Mehek. All rights reserved.
         </div>
       </div>
     </footer>

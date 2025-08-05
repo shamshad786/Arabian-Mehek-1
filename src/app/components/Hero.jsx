@@ -1,34 +1,69 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { nanoid } from 'nanoid'
 
 const Hero = () => {
   // State for email input, popup visibility, error message, and verification code
   const [email, setEmail] = useState("");
   const [showPopup, setShowPopup] = useState(false);
   const [error, setError] = useState("");
-  const [verificationCode, setVerificationCode] = useState("");
+  const [verificationCode, setVerificationCode] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   // New state for the initial pop-up visibility. Initialized to true to show on load.
   const [showInitialPopup, setShowInitialPopup] = useState(true);
 
   // Function to handle the "Subscribe" button click
-  const handleSubscribe = (e) => {
+  const handleSubscribe = async(e) => {
     e.preventDefault();
-    // Check if the email input is empty
-    if (!email) {
+    setLoading(true);
+   try {
+        
+
+         const code = Math.floor(10000 + Math.random() * 90000).toString();
+        
+   
+     if (!email) {
       setError("Please enter your email");
       return;
     }
+
+    //  pending 
+     if (!code  )  return console.log("stop command")
+
+    const res = await axios.post('https://arb-mhk-coupon.onrender.com/api/v1/subscribe', {
+      email:email,
+      coupon:`ARB${code}`
+      
+    } );
+
+    if (res.data.status === 'success') {
+     const userdata = res.data.subscribe
+     setVerificationCode(userdata.coupon); 
+     if (userdata){
+      setShowPopup(true);
+
+     }
     
-    // Clear any existing error message
+    }
+    
+ 
+    console.log(res.data);
+
+
+   
+
+    
+    
+   } catch (error) {
+    console.log(error);
+    
+   } finally {
     setError("");
+    setLoading(false);
 
-    // Generate a random 5-digit code
-    const code = Math.floor(10000 + Math.random() * 90000).toString();
-    setVerificationCode(code);
-
-    // Show the subscription popup
-    setShowPopup(true);
+   }
   };
 
   // Function to close the subscription popup
@@ -80,11 +115,12 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-20 max-w-7xl w-full flex flex-col items-center gap-6 text-white px-4 md:px-8">
         {/* Logo */}
-        <img
+        <a href="/"> <img         
           src="/Logo-1.png"
           alt="Arabian Mehek Logo"
           className="w-28 md:w-48 mb-2 mt-10"
-        />
+        /></a>
+      
 
         {/* Heading */}
         <h4 className="text-sm md:text-base font-medium">
@@ -114,10 +150,13 @@ const Hero = () => {
               className="px-15 py-3 w-full rounded-full bg-white/20 border border-yellow-400 placeholder-white text-white focus:outline-none focus:ring-2 focus:ring-yellow-400 transition backdrop-blur-sm"
             />
             <button
+            disabled= {loading}
               type="submit"
               className="w-full sm:w-auto px-6 py-3 bg-yellow-400 hover:bg-yellow-500 text-black font-semibold rounded-full transition"
             >
-              Subscribe
+              {
+                loading ? 'Loading...' : "Subscribe"
+              }
             </button>
           </div>
         </form>

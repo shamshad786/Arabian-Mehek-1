@@ -2,7 +2,7 @@ import Hero from "./components/Hero";
 import Counter from "./components/Counter";
 import Video from "./components/Video";
 import Testimonial from "./components/Testimonial";
-import Contact from "./components/Contact";
+// import Contact from "./components/Contact";
 import Footer from "./components/Footer"
 import FloatingWhatsappWrapper from './components/FloatingWhatsappWrapper'; // Import the new wrapper
 
@@ -14,7 +14,7 @@ export default function Home() {
 <Counter/>
 <Video/>
 <Testimonial/>
-<Contact/>
+{/* <Contact/> */}
 <Footer/>
 <FloatingWhatsappWrapper />
 
