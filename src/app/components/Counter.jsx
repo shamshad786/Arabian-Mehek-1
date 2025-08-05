@@ -93,9 +93,9 @@ const Countdown = () => {
         `}
       >
         <img
-          src="Perfume.png" 
+          src="Perfume.webp" 
           alt="Arabian Mehek Cologne Bottle"
-          className="w-full h-auto rounded-xl shadow-2xl"
+          className="w-full h-auto  "
         />
       </div>
 
@@ -127,6 +127,8 @@ const Countdown = () => {
       </div>
       
       <p>Only for Pre-Subscribers – Subscribe Now for 20% Launch Discount <a href="#"><span className='underline' text-blue>Click Here</span></a></p>
+      <a href="#" className='bg-amber-300 hover:bg-amber-400 text-white font-bold py-4 px-25 rounded mt-15'> Shop Now</a> 
+
     </section>
   );
 };
