@@ -1,16 +1,10 @@
 'use client';
 import React from 'react';
-// Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
+import { Autoplay } from 'swiper/modules';
 
-// import required modules
-import { Pagination, Autoplay } from 'swiper/modules';
-
-// Mock testimonial data
 const testimonials = [
     {
         id: 1,
@@ -52,32 +46,7 @@ const testimonials = [
 const Testimonial = () => {
     return (
         <section className="py-20 px-4 md:px-10 bg-white text-gray-900 relative overflow-hidden">
-            <style jsx global>{`
-                .mySwiper .swiper-pagination-bullet {
-                    background: #e0e0e0;
-                    opacity: 0.7;
-                    transition: all 0.3s ease;
-                }
-                .mySwiper .swiper-pagination-bullet-active {
-                    background: #FFD700;
-                    opacity: 1;
-                    transform: scale(1.2);
-                }
-                .swiper-pagination {
-                    margin-top: 2.5rem !important;
-                }
-                .gradient-blob {
-                    position: absolute;
-                    bottom: -20px;
-                    left: -20px;
-                    width: 100px;
-                    height: 100px;
-                    background: radial-gradient(circle, rgba(253, 184, 19, 0.4) 0%, rgba(230, 215, 164, 0.2) 100%);
-                    filter: blur(40px);
-                    border-radius: 50%;
-                    z-index: 0;
-                }
-            `}</style>
+          
             <div className="container mx-auto">
                 <h2 className="text-4xl font-extrabold text-gray-900 text-center mb-16">
                     What Our Users Say
@@ -94,7 +63,7 @@ const Testimonial = () => {
                     pagination={{
                         clickable: true,
                     }}
-                    modules={[Pagination, Autoplay]}
+                    modules={[Autoplay]}
                     className="mySwiper"
                     breakpoints={{
                         640: {

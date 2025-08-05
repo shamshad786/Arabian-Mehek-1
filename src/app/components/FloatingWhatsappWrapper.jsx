@@ -9,8 +9,8 @@ const FloatingWhatsappWrapper = () => {
 
       <FloatingWhatsApp 
         phoneNumber="+1234567890" 
-        accountName="My Company Name" 
-        avatar="/path/to/your/avatar.jpg" 
+        accountName="Arabian Mehek" 
+        avatar="/Logo.jpg" 
         statusMessage="Typically replies within an hour"
         chatMessage="Hello there! How can we help you?"
       />
