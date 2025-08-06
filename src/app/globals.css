@@ -28,14 +28,17 @@ html {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-amiri), serif;
+  font-family: var(--font-marcellus), serif;
+  
 }
 
 p {
   font-family: var(--font-open-sans), sans-serif;
 }
 
-/* Animations */
+/* animated font */
+
+
 @keyframes slide {
   from {
     transform: translateX(0);
@@ -46,10 +49,9 @@ p {
 }
 
 .animate-slide-continuous {
-  animation: slide 30s linear infinite; /* Adjust duration for speed */
+  animation: slide 30s linear infinite; 
 }
 
-/* Animated coming soon text */
 svg {
   font-family: "Russo One", sans-serif;
   width: 100%;
@@ -58,32 +60,32 @@ svg {
 
 svg text {
   animation: stroke 5s infinite alternate;
-  stroke-width: 2;
-  stroke: #ECE95B;
-  font-size: 100px;
+  stroke-width: 8;
+  stroke: #ff3f04;
+  font-size: 150px;
 }
 
 @keyframes stroke {
   0% {
     fill: rgba(255, 215, 0, 0);
-    stroke: rgba(236, 233, 91, 1);
+    stroke: #f16d20;
     stroke-dashoffset: 25%;
     stroke-dasharray: 0 50%;
-    stroke-width: 2;
+    stroke-width: 10;
   }
   70% {
     fill: rgba(255, 215, 0, 0);
-    stroke: rgba(236, 233, 91, 1);
+    stroke:#ff7504;
   }
   80% {
     fill: rgba(255, 215, 0, 0);
-    stroke: rgba(236, 233, 91, 1);
-    stroke-width: 3;
+    stroke: #fa4f00;
+    stroke-width: 6;
   }
   100% {
-    fill: rgba(255, 215, 0, 1);
+    fill: #f4243ce4;
     stroke: rgba(236, 233, 91, 0);
-    stroke-dashoffset: -25%;
+    stroke-dashoffset: -30%;
     stroke-dasharray: 50% 0;
     stroke-width: 0;
   }
@@ -99,7 +101,7 @@ svg text {
 .text-style {
   font-size: 25px;
   font-weight: bold;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-marcellus), serif;
   text-align: center;
 }
 .animation-fadeInUp {
@@ -116,5 +118,17 @@ svg text {
   100% {
       opacity: 1;
       transform: translateY(0);
+  }
+}
+
+
+/* videos */
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: -200% center;
   }
 }

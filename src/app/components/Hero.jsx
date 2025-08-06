@@ -98,14 +98,16 @@ const Hero = () => {
       {/* Initial Welcome Pop-up */}
       {showInitialPopup && (
         <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-60 p-5 animate-fade-in">
-          <div className="relative bg-white text-black p-10 rounded-lg shadow-xl max-w-xs w-full text-center flex flex-col gap-4">
-            <h3 className="text-xl font-bold">Welcome!</h3>
-            <p className="text-sm">
-              Discover a new world of fragrances from the Middle East.
-            </p>
+          <div className="relative bg-white text-black p-10 rounded-lg shadow-xl max-w-xl w-full text-center flex flex-col gap-4">
+            <h3 className="text-3xl font-bold -mt-5">Welcome</h3>
+            <h3 className="text-4xl font-bold">ARABIAN MEHEK </h3>
+            <p className="-mt-3 text-xs"> Not Made Here. Not Made Ordinary. 100% Imported Perfume</p>
+            <p className="text-l mt-3">Subscribe now and claim your exclusive discount before launch. </p>
+            <h3 className="bg-gradient-to-r from-yellow-500 via-red-500 to-pink-500 text-transparent bg-clip-text text-3xl font-bold -mt-3"> <span className="font-extrabold">20% OFF</span> Only for Pre-Subscribers</h3>
+            <p className="text-3xl -mt-3 ">🥳🎉</p>
             <button
               onClick={handleCloseInitialPopup}
-              className="mt-2 px-6 py-2 bg-yellow-400 hover:bg-yellow-500 text-black font-semibold rounded-full transition"
+              className=" px-4 py-1 bg-yellow-400 hover:bg-yellow-500 text-black font-semibold rounded-full transition -mt-3 "
             >
               Continue to Site
             </button>
@@ -124,17 +126,22 @@ const Hero = () => {
       
 
         {/* Heading */}
-        <p className="text-sm md:text-base font-medium" id="form">
+        <p className="bg-gradient-to-r from-yellow-500 via-amber-200 to-amber-300 text-transparent bg-clip-text text-xl" id="form">
           No local blends, no compromises. Only pure, high-quality imports
         </p>
-        <h1 className="text-xl sm:text-2xl md:text-4xl font-semibold leading-tight tracking-tight max-w-8xl px-2">
-        <span class="text-style animation-fadeInUp" > Arabian Mehek </span>
-          isn’t just a fragrance—it's an{" "}
-          <span className="text-yellow-400">experience</span>. Discover{" "}
-          <span className="text-yellow-400">100% authentic imported perfumes</span> from the Middle East, now launching exclusively in{" "}
-          <span className="text-yellow-400">India</span>.
+        <h1 className="text-6xl sm:text-4xl md:text-5xl font-semibold leading-tight tracking-tight max-w-8xl px-2 text-amber-100">
+        <span className="inline-block bg-gradient-to-r from-yellow-400 via-red-500 to-amber-300 bg-clip-text text-transparent text-6xl font-bold" style={{
+    backgroundSize: '200% auto', 
+    animation: 'gradient-animation 3s linear infinite', 
+  }} >  Arabian Mehek </span> isn’t just a fragrance—it's an{" "}
+          experience Discover{" "}
+          100% authentic imported perfumes from the Middle East, now launching exclusively in{" "}
+          <span className="inline-block bg-gradient-to-r from-yellow-400 via-red-500 to-amber-300 bg-clip-text text-transparent text-6xl font-bold" style={{
+    backgroundSize: '200% auto', 
+    animation: 'gradient-animation 3s linear infinite', 
+  }} >  India </span>
         </h1>
-        <p className="text-sm md:text-base font-medium">
+        <p className="bg-gradient-to-r from-yellow-400 via-amber-200 to-amber-300 text-transparent bg-clip-text text-xl">
           Signature scents for both men and women, crafted to reflect personality and power
         </p>
 
@@ -174,7 +181,8 @@ const Hero = () => {
       {showPopup && (
         <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
           <div className="relative bg-white text-black p-8 rounded-lg shadow-xl max-w-sm w-full text-center flex flex-col gap-4">
-            <h3 className="text-2xl font-bold">Thank you for subscribing!</h3>
+            <h3 className="text-2xl font-bold">Only Early Subscribers Get 20% OFF – Don’t Miss Your Chance to Own Authentic Arabian Perfume at a Special Price!
+</h3>
             <p className="text-l">
               Use Your 20% Discount and Be Among the First to Experience Arabian Mehek.
             </p>

@@ -1,24 +1,24 @@
-import { Amiri, Open_Sans } from "next/font/google";
-import "./globals.css";
+import './globals.css';
+import { Marcellus, Open_Sans } from 'next/font/google';
 
-const amiri = Amiri({
-  // Change to all lowercase
-  variable: "--font-amiri",
-  subsets: ["latin"],
-  weight: ["400", "700"],
+const marcellus = Marcellus({
+  variable: '--font-marcellus',
+  subsets: ['latin'],
+  weight: '400',
 });
 
+// Corrected variable name and font function
 const openSans = Open_Sans({
-  variable: "--font-open-sans",
-  subsets: ["latin"],
-  weight: ["400", "700"],
+  variable: '--font-open-sans', 
+  subsets: ['latin'],
+  weight: ['400', '700'],
 });
 
 export const metadata = {
-  title: "Arabian Mehek ",
-  description: "It is a landing page for Arabian Mehek",
+  title: 'Arabian Mehek',
+  description: 'It is a landing page for Arabian Mehek',
   icons: {
-    icon: "/Logo.jpg",
+    icon: '/Logo.jpg',
   },
 };
 
@@ -26,7 +26,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${amiri.variable} ${openSans.variable} antialiased`}
+        // Corrected variable name from 'roboto' to 'openSans' and added both to the class
+        className={`${marcellus.variable} ${openSans.variable} antialiased`}
       >
         {children}
       </body>

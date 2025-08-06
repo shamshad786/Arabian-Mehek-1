@@ -23,7 +23,6 @@ const Video = () => {
       title: 'Mysterious Oriental Eau',
       url: '/Rumba2.mp4',
     },
-  
   ];
 
   const sliderRef = useRef(null);
@@ -38,7 +37,7 @@ const Video = () => {
       if (sliderRef.current) {
         const slider = sliderRef.current;
         const cardWidth = slider.children[0].offsetWidth + 16;
-        
+
         if (slider.scrollLeft + slider.offsetWidth >= slider.scrollWidth) {
           slider.scrollTo({ left: 0, behavior: 'smooth' });
         } else {
@@ -82,7 +81,7 @@ const Video = () => {
 
   return (
     <div className="bg-white p-6 md:p-12 flex flex-col items-center min-h-screen">
-      <div 
+      <div
         className="relative mx-auto max-w-7xl w-full"
         onMouseEnter={handleMouseEnterContainer}
         onMouseLeave={handleMouseLeaveContainer}
@@ -103,23 +102,27 @@ const Video = () => {
                   ref={el => videoRefs.current[video.id] = el}
                   className="w-full h-auto aspect-[9/16] object-cover"
                   src={video.url}
-                 
+                  controls
                   loop
                   preload="metadata"
                 >
                   Your browser does not support the video tag.
                 </video>
-                <div className="absolute inset-0 bg-black/20 flex items-center justify-center transition-opacity duration-300 opacity-100 group-hover:opacity-0">
-                  <span className="text-white text-base font-semibold text-center px-2">{video.title}</span>
-                </div>
+
+                {/* Overlay only when not hovered */}
+                {hoveredVideoId !== video.id && (
+                  <div className="absolute inset-0 bg-black/30 flex items-center justify-center text-white text-sm font-semibold pointer-events-none">
+                    {video.title}
+                  </div>
+                )}
               </div>
-              
             </div>
           ))}
         </div>
-        
       </div>
-      <a href="#" className='bg-amber-300 hover:bg-amber-400 text-white font-bold py-4 px-25 rounded mt-15'> Follow on instagram</a> 
+
+      <a href='#' type="button" class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-xl px-25 py-4 mt-15 text-center me-2 mb-2">Follow on Instagram</a>
+
     </div>
   );
 };
@@ -128,8 +131,6 @@ const App = () => {
   return (
     <div className="bg-white font-sans">
       <Video />
-   
-
     </div>
   );
 };
