@@ -103,7 +103,7 @@ const Video = () => {
                   ref={el => videoRefs.current[video.id] = el}
                   className="w-full h-auto aspect-[9/16] object-cover"
                   src={video.url}
-                  muted
+                 
                   loop
                   preload="metadata"
                 >
