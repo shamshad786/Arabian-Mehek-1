@@ -1,6 +1,5 @@
+/* Header */
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Playwrite+HU:wght@100..400&display=swap');
-
 
 :root {
   --background: #ffffff;
@@ -10,8 +9,6 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,15 +21,100 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: "Poppins", sans-serif;
 }
 
-.swiper-pagination {
+html {
+  scroll-behavior: smooth;
+}
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-amiri), serif;
+}
+
+p {
+  font-family: var(--font-open-sans), sans-serif;
+}
+
+/* Animations */
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-slide-continuous {
+  animation: slide 30s linear infinite; /* Adjust duration for speed */
+}
+
+/* Animated coming soon text */
+svg {
+  font-family: "Russo One", sans-serif;
+  width: 100%;
+  height: 100%;
+}
+
+svg text {
+  animation: stroke 5s infinite alternate;
+  stroke-width: 2;
+  stroke: #ECE95B;
+  font-size: 100px;
+}
+
+@keyframes stroke {
+  0% {
+    fill: rgba(255, 215, 0, 0);
+    stroke: rgba(236, 233, 91, 1);
+    stroke-dashoffset: 25%;
+    stroke-dasharray: 0 50%;
+    stroke-width: 2;
+  }
+  70% {
+    fill: rgba(255, 215, 0, 0);
+    stroke: rgba(236, 233, 91, 1);
+  }
+  80% {
+    fill: rgba(255, 215, 0, 0);
+    stroke: rgba(236, 233, 91, 1);
+    stroke-width: 3;
+  }
+  100% {
+    fill: rgba(255, 215, 0, 1);
+    stroke: rgba(236, 233, 91, 0);
+    stroke-dashoffset: -25%;
+    stroke-dasharray: 50% 0;
+    stroke-width: 0;
+  }
+}
+
+/* Utilities */
+.wrapper {
+  background-color: #FFFFFF;
+}
+
+/* Header Animation */
+
+.text-style {
+  font-size: 25px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
   text-align: center;
-  transition: 300ms opacity;
-  transform: translate3d(0, 0, 0);
-  z-index: 10;
 }
-
-
+.animation-fadeInUp {
+  animation-name: fadeInUp;
+  animation-duration: 5s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
+@keyframes fadeInUp {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}

@@ -10,13 +10,7 @@ const Footer = () => {
           <div className="flex flex-col items-center">
             <h2 className="text-xl font-bold text-gray-800">Arabian Mehek</h2>
           </div>
-          <nav className="flex flex-col items-center space-y-4 md:flex-row md:space-x-8 md:space-y-0">
-            <a href="#" className="hover:text-amber-300 transition-colors duration-200">Pricing</a>
-            <a href="#" className="hover:text-amber-300 transition-colors duration-200">About</a>
-            <a href="#" className="hover:text-amber-300 transition-colors duration-200">News</a>
-            <a href="#" className="hover:text-amber-300 transition-colors duration-200">Reviews</a>
-            <a href="#" className="hover:text-amber-300 transition-colors duration-200">Updates</a>
-          </nav>
+       
           <div className="flex flex-col items-center space-y-4">
             <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-widest">Stay in touch</h3>
             <div className="flex space-x-4">

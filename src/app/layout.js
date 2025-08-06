@@ -1,17 +1,17 @@
-import { Poppins, Open_Sans } from "next/font/google";
-import { FloatingWhatsApp } from 'react-floating-whatsapp';
+import { Amiri, Open_Sans } from "next/font/google";
 import "./globals.css";
 
-const poppins = Poppins({
-  variable: "--font-poppins",
+const amiri = Amiri({
+  // Change to all lowercase
+  variable: "--font-amiri",
   subsets: ["latin"],
-  weight: ["400", "700"], // Specify the font weights you want to use
+  weight: ["400", "700"],
 });
 
 const openSans = Open_Sans({
   variable: "--font-open-sans",
   subsets: ["latin"],
-  weight: ["400", "700"], // Specify the font weights you want to use
+  weight: ["400", "700"],
 });
 
 export const metadata = {
@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} ${openSans.variable} antialiased`}
+        className={`${amiri.variable} ${openSans.variable} antialiased`}
       >
         {children}
       </body>

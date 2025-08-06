@@ -8,11 +8,11 @@ const FloatingWhatsappWrapper = () => {
       {/* Your other page content */}
 
       <FloatingWhatsApp 
-        phoneNumber="+1234567890" 
+        phoneNumber="+91 9211961238" 
         accountName="Arabian Mehek" 
         avatar="/Logo.jpg" 
-        statusMessage="Typically replies within an hour"
-        chatMessage="Hello there! How can we help you?"
+        statusMessage="Pre-orders are now available with a 20% discount on  products."
+        chatMessage="Hello there! Place your order"
       />
     </div>
   );

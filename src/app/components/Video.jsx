@@ -5,23 +5,23 @@ const Video = () => {
   const videos = [
     {
       id: 1,
-      title: 'Elegant Floral Perfume',
-      url: '/vid.mp4',
+      title: 'Elegant Marqui Perfume',
+      url: '/Marqui 2.mp4',
     },
     {
       id: 2,
-      title: 'Fresh Citrus Scent',
-      url: '/vid.mp4',
+      title: 'Fresh Marquis Scent',
+      url: '/Marquis.mp4',
     },
     {
       id: 3,
       title: 'Warm & Spicy Cologne',
-      url: '/vid.mp4',
+      url: '/Rumba.mp4',
     },
     {
       id: 4,
       title: 'Mysterious Oriental Eau',
-      url: '/vid.mp4',
+      url: '/Rumba2.mp4',
     },
   
   ];
@@ -109,7 +109,7 @@ const Video = () => {
                 >
                   Your browser does not support the video tag.
                 </video>
-                <div className="absolute inset-0 bg-black/40 flex items-center justify-center transition-opacity duration-300 opacity-100 group-hover:opacity-0">
+                <div className="absolute inset-0 bg-black/20 flex items-center justify-center transition-opacity duration-300 opacity-100 group-hover:opacity-0">
                   <span className="text-white text-base font-semibold text-center px-2">{video.title}</span>
                 </div>
               </div>

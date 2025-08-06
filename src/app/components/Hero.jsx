@@ -21,7 +21,8 @@ const Hero = () => {
    try {
         
 
-         const code = Math.floor(10000 + Math.random() * 90000).toString();
+        //  const code = Math.floor(10000 + Math.random() * 90000).toString();
+        const code = nanoid (3)
         
    
      if (!email) {
@@ -34,7 +35,7 @@ const Hero = () => {
 
     const res = await axios.post('https://arb-mhk-coupon.onrender.com/api/v1/subscribe', {
       email:email,
-      coupon:`ARB${code}`
+      coupon:`ARB${code.toUpperCase()}20OFF`
       
     } );
 
@@ -123,23 +124,24 @@ const Hero = () => {
       
 
         {/* Heading */}
-        <h4 className="text-sm md:text-base font-medium">
+        <p className="text-sm md:text-base font-medium" id="form">
           No local blends, no compromises. Only pure, high-quality imports
-        </h4>
+        </p>
         <h1 className="text-xl sm:text-2xl md:text-4xl font-semibold leading-tight tracking-tight max-w-8xl px-2">
-          <span className="text-yellow-400">Arabian Mehek</span> isn’t just a fragrance—it's an{" "}
+        <span class="text-style animation-fadeInUp" > Arabian Mehek </span>
+          isn’t just a fragrance—it's an{" "}
           <span className="text-yellow-400">experience</span>. Discover{" "}
           <span className="text-yellow-400">100% authentic imported perfumes</span> from the Middle East, now launching exclusively in{" "}
           <span className="text-yellow-400">India</span>.
         </h1>
-        <h4 className="text-sm md:text-base font-medium">
+        <p className="text-sm md:text-base font-medium">
           Signature scents for both men and women, crafted to reflect personality and power
-        </h4>
+        </p>
 
         {/* Email input + Join button */}
         <form onSubmit={handleSubscribe}>
           <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-xmd mx-auto">
-            <input
+            <input 
               type="email"
               placeholder="Enter email get 20% off"
               value={email}
@@ -177,7 +179,7 @@ const Hero = () => {
               Use Your 20% Discount and Be Among the First to Experience Arabian Mehek.
             </p>
             <div className="bg-yellow-100 border-2 border-yellow-400 rounded-lg py-3 px-6 text-3xl font-mono tracking-widest font-bold">
-              {verificationCode}
+             <h2>Thankyou 🥳🥳🥳</h2>
             </div>
             <p className="text-sm text-gray-600">
               Use this code to avail a special offer on your first purchase.
