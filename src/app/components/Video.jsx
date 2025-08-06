@@ -80,7 +80,7 @@ const Video = () => {
   };
 
   return (
-    <div className="bg-white p-6 md:p-12 flex flex-col items-center min-h-screen">
+    <div className="bg-white p-6 md:p- flex flex-col items-center ">
       <div
         className="relative mx-auto max-w-7xl w-full"
         onMouseEnter={handleMouseEnterContainer}
@@ -121,7 +121,20 @@ const Video = () => {
         </div>
       </div>
 
-      <a href='#' type="button" class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-xl px-25 py-4 mt-15 text-center me-2 mb-2">Follow on Instagram</a>
+      <a
+  href="#"
+  type="button"
+  className="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl 
+         focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 
+         font-medium rounded-lg 
+         text-base sm:text-lg md:text-xl 
+         px-6 sm:px-8 md:px-10 
+         py-3 sm:py-4
+         mt-6 sm:mt-8 
+         text-center inline-block "
+>
+  Follow on Instagram
+</a>
 
     </div>
   );

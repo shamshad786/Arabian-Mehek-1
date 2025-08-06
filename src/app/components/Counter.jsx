@@ -20,7 +20,7 @@ const ContinuousSlider = () => {
         {`
         @keyframes slide {
           0% { transform: translateX(0%); }
-          100% { transform: translateX(-50%); }
+          100% { transform: translateX(-99%); }
         }
         `}
       </style>
@@ -106,8 +106,8 @@ const Countdown = () => {
   return (
     <section className="bg-white text-gray-900 flex flex-col items-center justify-center text-center px-4 py-2 md:py-20 font-inter">
       {/* SVG for "Coming soon" text - FIX: adjusted text positioning and added responsive classes */}
-      <svg >
-        <text className='text-2xl sm:text-4xl md:text-6xl lg:text-9xl ' x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" >
+      <svg className='text-2xl sm:text-4xl md:text-6xl lg:text-9xl' >
+        <text  x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" >
           Coming Soon
         </text>
       </svg>
@@ -115,9 +115,12 @@ const Countdown = () => {
 
       {/* Title with responsive font sizes and margins. */}
       <h2 className="text-xl sm:text-2xl md:text-3xl font-bold leading-tight max-w-5xl animate-pop-in my-6 md:my-10 px-2">
-        Your Signature Scent Shouldn’t Be Local — It Should Be Legendary{' '}
-        <h2 className="bg-gradient-to-l from-purple-500 via-orange-500 to-yellow-500 text-transparent bg-clip-text text-5xl">Arabian Mehek is Coming</h2> to Make You Unforgettable
-      </h2>
+  Your Signature Scent Shouldn’t Be Local — It Should Be Legendary{' '}
+  <span className="bg-gradient-to-l from-purple-500 via-orange-500 to-yellow-500 text-transparent bg-clip-text text-5xl">
+    Arabian Mehek is Coming
+  </span>{' '}
+  to Make You Unforgettable
+</h2>
 
     
 
@@ -166,6 +169,16 @@ const Countdown = () => {
       </h3>
 
 
+    
+
+
+
+      <a
+        href="#"
+        className="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-10 rounded-full mt-8 shadow-lg transition-colors duration-300"
+      >
+        Shop Now
+      </a>
     </section>
   );
 };
