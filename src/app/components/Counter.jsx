@@ -1,5 +1,7 @@
 'use client';
 import React, { useState, useEffect, useRef } from 'react';
+import { FaWhatsapp  } from "react-icons/fa";
+
 
 // --- ContinuousSlider Component ---
 // (Your ContinuousSlider component remains unchanged)
@@ -106,21 +108,19 @@ const Countdown = () => {
   return (
     <section className="bg-white text-gray-900 flex flex-col items-center justify-center text-center px-4 py-2 md:py-20 font-inter">
       {/* SVG for "Coming soon" text - FIX: adjusted text positioning and added responsive classes */}
-      <svg className='text-2xl sm:text-4xl md:text-6xl lg:text-9xl' >
-        <text  x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" >
-          Coming Soon
-        </text>
-      </svg>
+      <svg viewBox="0 0 1800 200" preserveAspectRatio="xMidYMid meet">
+  <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle">
+    Coming soon
+  </text>
+</svg>
 
 
       {/* Title with responsive font sizes and margins. */}
       <h2 className="text-xl sm:text-2xl md:text-3xl font-bold leading-tight max-w-5xl animate-pop-in my-6 md:my-10 px-2">
   Your Signature Scent Shouldn’t Be Local — It Should Be Legendary{' '}
-  <span className="bg-gradient-to-l from-purple-500 via-orange-500 to-yellow-500 text-transparent bg-clip-text text-5xl">
-    Arabian Mehek is Coming
-  </span>{' '}
-  to Make You Unforgettable
 </h2>
+<h2 className="w-full text-center text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-l from-purple-500 via-orange-500 to-yellow-500 text-transparent bg-clip-text leading-tight px-4 break-words -m-5 mb-1">  Arabian Mehek is Coming </h2>
+  <h2 className='text-xl sm:text-2xl md:text-3xl  leading-tight max-w-5xl animate-pop-in  px-2'>  to Make You Unforgettable </h2>
 
     
 
@@ -153,7 +153,7 @@ const Countdown = () => {
         </div>
 
         {/* Seconds timer box */}
-        <div className="flex flex-col items-center p-6 sm:p-8 bg-gray-200 rounded-xl backdrop-blur-md min-w-[70px] sm:min-w-[90px] md:min-w-[110px] animate-pop-in shadow-md">
+        <div className="flex flex-col items-center p-6 sm:p-8 bg-gray-200 rounded-xl backdrop-blur-md min-w-[70px] sm:min-w-[90px] md:min-w-[110px] animate-pop-in shadow-md hidden lg:block">
           <span className="text-3xl sm:text-4xl md:text-5xl font-extrabold">{timeLeft.seconds}</span>
           <span className="text-xs sm:text-sm mt-1 uppercase text-gray-600">Seconds</span>
         </div>
@@ -162,23 +162,26 @@ const Countdown = () => {
       {/* text */}
 
       <h3 className="text-sm sm:text-base md:text-xl text-lime-950 max-w-3xl animate-pop-in font-semibold mb-6 md:mb-10 px-2">
-         Only for Pre-Subscribers – Subscribe Now for 20% Launch Discount    <span className="bg-gradient-to-l from-purple-500 via-orange-500 to-yellow-500 text-transparent bg-clip-text"> <a href="#form" className=" underline"> click here    
-         </a> </span> <br />
-        Be the First to Smell the Difference{' '}
-        <span className="bg-gradient-to-r from-yellow-500 via-red-500 to-pink-500 text-transparent bg-clip-text text-xl sm:text-2xl">Arabian Mehek is Coming</span>
-      </h3>
+         Only for Pre-Subscribers – Subscribe Now for 20% Launch Discount    <span className="bg-gradient-to-l from-purple-500 via-orange-500 to-yellow-500 text-transparent bg-clip-text"> <a href="#form" className=" text-pink-500 underline"> click here    
+         </a> </span> </h3>
 
 
+
+     <h3 className="text-sm sm:text-base md:text-xl text-lime-950 max-w-3xl animate-pop-in mb-6 md:mb-10 px-2 flex items-center gap-2 flex-wrap">
+  Be the First to Smell the Difference{" "}
+  <a href="/"> <span className="bg-gradient-to-r from-yellow-500 via-red-500 to-pink-500 text-transparent bg-clip-text text-xl sm:text-2xl font-semibold">
+    Book your pre order
+  </span></a>
+ 
+  <a href="/" target="_blank" rel="noopener noreferrer">
+    <FaWhatsapp className="text-pink-500 text-2xl sm:text-3xl" />
+  </a>
+</h3>
+
+   
+        
     
 
-
-
-      <a
-        href="#"
-        className="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-10 rounded-full mt-8 shadow-lg transition-colors duration-300"
-      >
-        Shop Now
-      </a>
     </section>
   );
 };
