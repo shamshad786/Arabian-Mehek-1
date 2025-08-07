@@ -1,6 +1,7 @@
 'use client';
 import React, { useState, useEffect, useRef } from 'react';
-import { FaWhatsapp  } from "react-icons/fa";
+import Link from 'next/link';
+
 
 
 // --- ContinuousSlider Component ---
@@ -123,6 +124,7 @@ const Countdown = () => {
 <h2 className="w-full text-center text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-l from-purple-500 via-orange-500 to-yellow-500 text-transparent bg-clip-text leading-tight px-4 break-words -m-5 mb-1">  Arabian Mehek is Coming </h2>
   <h2 className='text-xl sm:text-2xl md:text-3xl  leading-tight max-w-5xl animate-pop-in  px-2'>  to Make You Unforgettable </h2>
 
+
     
 
       {/* The ContinuousSlider component is now placed here */}
@@ -135,6 +137,7 @@ const Countdown = () => {
         Be the First to Smell the Difference{' '}
         <span className="bg-gradient-to-r from-yellow-500 via-red-500 to-pink-500 text-transparent bg-clip-text text-xl sm:text-2xl">Arabian Mehek is Coming</span>
       </h3>
+      <h2 className="w-full text-center text-xl sm:text-xl md:text-2xl font-bold bg-gradient-to-l from-purple-500 via-orange-500 to-yellow-500 text-transparent bg-clip-text leading-tight px-4 break-words -mt-6  mb-3"> Launch In </h2>
 
       <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 mb-10">
         {/* Days timer box */}
@@ -172,16 +175,18 @@ const Countdown = () => {
 
 
          <h3 className="text-sm sm:text-base md:text-xl text-lime-950 max-w-3xl animate-pop-in mb-6 md:mb-10 px-2 flex items-center justify-center text-center gap-2 flex-wrap">
-  Be the First to Smell the Difference{" "}
+ Buy Your Product {" "}
   <a href="https://wa.link/olfd8b">
     <span className="bg-gradient-to-r from-yellow-500 via-red-500 to-pink-500 text-transparent bg-clip-text text-xl sm:text-2xl font-semibold">
       Book your pre order
     </span>
   </a>
-  <a href="https://wa.link/olfd8b" target="_blank" rel="noopener noreferrer">
-    <FaWhatsapp className="text-pink-500 text-3xl sm:text-5xl" />
-  </a>
+ 
 </h3>
+
+<Link href="/product"  className="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 font-medium rounded-lg text-base sm:text-lg md:text-xl px-5 py-3 mt-6 text-center"> Buy Your Product </Link>
+
+
 
    
         

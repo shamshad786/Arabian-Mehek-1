@@ -10,7 +10,7 @@ const testimonials = [
         id: 1,
         quote: "This perfume exceeded my expectations. The scent is elegant, long-lasting, and has a premium feel. It’s refreshing but not too strong, making it great for daily use or special events. A perfect blend of luxury and comfort. Truly impressed and satisfied!   ",
         name: "Kalim Shah",
-        title: "Financial Adviser",
+        title: "Financial Advisor",
         avatar: "/kalim.jpg "
     },
     {
