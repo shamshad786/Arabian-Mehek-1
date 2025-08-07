@@ -170,11 +170,11 @@ const Countdown = () => {
 
      <h3 className="text-sm sm:text-base md:text-xl text-lime-950 max-w-3xl animate-pop-in mb-6 md:mb-10 px-2 flex items-center gap-2 flex-wrap">
   Be the First to Smell the Difference{" "}
-  <a href="/"> <span className="bg-gradient-to-r from-yellow-500 via-red-500 to-pink-500 text-transparent bg-clip-text text-xl sm:text-2xl font-semibold">
+  <a href="https://wa.link/olfd8b"> <span className="bg-gradient-to-r from-yellow-500 via-red-500 to-pink-500 text-transparent bg-clip-text text-xl sm:text-2xl font-semibold">
     Book your pre order
   </span></a>
  
-  <a href="/" target="_blank" rel="noopener noreferrer">
+  <a href="https://wa.link/olfd8b" target="_blank" rel="noopener noreferrer">
     <FaWhatsapp className="text-pink-500 text-2xl sm:text-3xl" />
   </a>
 </h3>

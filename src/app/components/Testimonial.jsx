@@ -8,38 +8,38 @@ import { Autoplay } from 'swiper/modules';
 const testimonials = [
     {
         id: 1,
-        quote: "This platform has completely transformed my fitness journey. The AI suggestions are incredibly accurate and the workout plans are personalized to my needs. I highly recommend it!",
-        name: "Jane Doe",
-        title: "Fitness Enthusiast",
-        avatar: "https://placehold.co/100x100/ffd700/000000?text=JD"
+        quote: "This perfume truly exceeded my expectations. The fragrance is sophisticated, long-lasting, and has a luxurious charm that instantly uplifts your presence. It’s refreshing without being overpowering—perfect for daily wear or special occasions. ",
+        name: "Kalim Shah",
+        title: "Financial Adviser",
+        avatar: "/kalim.jpg "
     },
     {
         id: 2,
-        quote: "I've been able to lose weight and gain muscle thanks to the detailed progress graphs and the AI trainer's constant support. The interface is intuitive and easy to use.",
-        name: "John Smith",
-        title: "Software Engineer",
-        avatar: "https://placehold.co/100x100/ffd700/000000?text=JS"
+        quote: "I was unsure at first, but this turned out to be a great buy. The perfume smells amazing, lasts all day, and feels truly high-end. Fast delivery and good packaging too. Definitely worth it—I'll be buying again for sure.",
+        name: "Alaudin Mansuri",
+        title: "Shop Owner",
+        avatar: "/alaudin.jpg"
     },
     {
         id: 3,
-        quote: "The diet plan feature is a game-changer. It helps me track my nutrition goals effortlessly. I love the sleek design and how everything is in one place.",
-        name: "Emily White",
-        title: "Health Coach",
-        avatar: "https://placehold.co/100x100/ffd700/000000?text=EW"
+        quote: "I bought a perfume from this website and I'm really happy. It’s a good international brand at a price I could afford. The smell is amazing and lasts long. It feels premium. Great deal for the money. Highly recommended!",
+        name: "Ayush Aswal",
+        title: "Event manager",
+        avatar: "/ayush.jpg"
     },
     {
         id: 4,
-        quote: "As a busy professional, the AI suggestions save me so much time. I can get a quick overview of my progress and make small, impactful changes to my routine.",
-        name: "Michael Chen",
-        title: "Product Manager",
-        avatar: "https://placehold.co/100x100/ffd700/000000?text=MC"
+        quote: "This perfume is elegant, long-lasting, and subtly luxurious. It’s not too strong but makes a clear impression. Works well for daily wear or special occasions. I didn’t expect to love it this much. Definitely a go-to scent now. Recommended!",
+        name: "Md Azad",
+        title: "Digital Marketer",
+        avatar: "/Azad.jpg"
     },
     {
         id: 5,
-        quote: "The chat with the AI trainer feels so personal and helpful. It's like having a coach in my pocket 24/7. Highly effective and well-designed.",
-        name: "Sarah Kim",
-        title: "Student",
-        avatar: "https://placehold.co/100x100/ffd700/000000?text=SK"
+        quote: "This perfume has a beautiful, fresh scent that instantly lifts my mood. It lasts for hours without being too strong. The quality feels premium, and the price was totally worth it. I’ve received many compliments—absolutely love it and highly recommend",
+        name: "Manish Singh",
+        title: "Self Employed",
+        avatar: "/Manish.jpg"
     },
 ];
 
@@ -86,7 +86,7 @@ const Testimonial = () => {
                                 <img
                                     src={testimonial.avatar}
                                     alt={testimonial.name}
-                                    className="w-24 h-24 rounded-full mb-6 z-10"
+                                    className="w-24 h-24 rounded-full mb-6 z-10 object-cover" 
                                 />
                                 <p className="text-gray-600 italic mb-6 flex-grow z-10">
                                     "{testimonial.quote}"
