@@ -50,7 +50,7 @@ const ContinuousSlider = () => {
 
 
 // --- Countdown Component ---
-const targetDate = new Date('2025-12-31T23:59:59').getTime();
+const targetDate = new Date('2025-09-01T00:00:00').getTime();
 
 const Countdown = () => {
   const calculateTimeLeft = () => {
@@ -128,7 +128,7 @@ const Countdown = () => {
       <ContinuousSlider />
         {/* Subtitle with responsive font sizes and margins. */}
         <h3 className="text-sm sm:text-base md:text-xl text-lime-950 max-w-3xl animate-pop-in font-semibold mb-6 md:mb-10 px-2">
-        <span className="bg-gradient-to-l from-purple-500 via-orange-500 to-yellow-500 text-transparent bg-clip-text">Arabian Mehek</span> is coming soon and the countdown has begun <br />
+        <span className="bg-gradient-to-l from-purple-500 via-orange-500 to-yellow-500 text-transparent bg-clip-text">Arabian Mehek</span> is coming soon and the <span className='text-4xl'> countdown </span>has begun <br />
         Be the First to Smell the Difference{' '}
         <span className="bg-gradient-to-r from-yellow-500 via-red-500 to-pink-500 text-transparent bg-clip-text text-xl sm:text-2xl">Arabian Mehek is Coming</span>
       </h3>
@@ -162,8 +162,8 @@ const Countdown = () => {
 
       {/* text */}
 
-      <h3 className="text-sm sm:text-base md:text-xl text-lime-950 max-w-3xl animate-pop-in font-semibold mb-6 md:mb-10 px-2">
-         Only for Pre-Subscribers – Subscribe Now for 20% Launch Discount    <span className="bg-gradient-to-l from-purple-500 via-orange-500 to-yellow-500 text-transparent bg-clip-text"> <a href="#form" className=" text-pink-500 underline"> click here    
+      <h3 className="text-sm sm:text-base md:text-l text-lime-950 max-w-3xl animate-pop-in font-semibold mb-6 md:mb-10 px-">
+         Only for Pre-Subscribers – Subscribe Now for 20% Launch Discount Coupon     <span className="bg-gradient-to-l from-purple-500 via-orange-500 to-yellow-500 text-transparent bg-clip-text"> <a href="#form" className=" text-pink-500 underline"> click here  
          </a> </span> </h3>
 
 

@@ -15,14 +15,22 @@ const Video = () => {
   const [hoveredVideoId, setHoveredVideoId] = useState(null);
   const intervalRef = useRef(null);
 
+  // ✅ Updated scroll logic
   const startAutoSlide = () => {
     clearInterval(intervalRef.current);
     intervalRef.current = setInterval(() => {
       const slider = sliderRef.current;
-      if (slider) {
-        const cardWidth = slider.children[0].offsetWidth + 16;
-        const isAtEnd = slider.scrollLeft + slider.offsetWidth >= slider.scrollWidth;
-        slider.scrollTo({ left: isAtEnd ? 0 : slider.scrollLeft + cardWidth, behavior: 'smooth' });
+      if (slider && slider.children.length > 0) {
+        const card = slider.children[0];
+        const cardStyle = getComputedStyle(card);
+        const gap = parseInt(cardStyle.marginRight || '16', 10) || 16;
+        const cardWidth = card.offsetWidth + gap;
+
+        const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
+        let nextScroll = slider.scrollLeft + cardWidth;
+        if (nextScroll > maxScrollLeft) nextScroll = 0;
+
+        slider.scrollTo({ left: nextScroll, behavior: 'smooth' });
       }
     }, 30000);
   };
@@ -33,20 +41,17 @@ const Video = () => {
   }, [isHovered]);
 
   return (
-    <div className="bg-white p-2 flex flex-col items-center w-full  ">
+    <div className="bg-white  flex flex-col items-center w-full justify-center">
       <div
-        className="relative w-full max-w-5xl"
+        className="relative w-full max-w-4x"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <div
-          ref={sliderRef}
-          className="flex gap-4 overflow-hidden p-2"
-        >
+        <div ref={sliderRef} className="flex gap-4 overflow-hidden p-10 justify-center ">
           {videos.map((video) => (
             <div
               key={video.id}
-              className="flex-none w-full sm:w-1/2 md:w-1/3 lg:w-1/4 "
+              className="flex-none w-full sm:w-1/3 md:w-1/4 lg:w-1/5"
               onMouseEnter={() => {
                 setHoveredVideoId(video.id);
                 videoRefs.current[video.id]?.play();
@@ -56,6 +61,7 @@ const Video = () => {
                 const vid = videoRefs.current[video.id];
                 if (vid) {
                   vid.pause();
+
                   vid.currentTime = 0;
                 }
               }}
@@ -63,7 +69,7 @@ const Video = () => {
               <div className="relative group rounded-xl overflow-hidden shadow-lg transition-transform duration-300 transform hover:scale-105">
                 <video
                   ref={(el) => (videoRefs.current[video.id] = el)}
-                  className="w-full h-auto aspect-[9/16] object-cover"
+                  className="w-full h-auto aspect-[9/15] object-cover  "
                   src={video.url}
                   controls
                   loop

@@ -98,9 +98,10 @@ const Hero = () => {
         <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4 animate-fade-in">
           <div className="relative bg-white text-black p-8 rounded-lg shadow-xl max-w-sm sm:max-w-md md:max-w-lg w-full text-center flex flex-col gap-4">
             <h3 className="text-2xl sm:text-3xl font-bold -mt-3">Welcome</h3>
+            <p className="text-sm sm:text-base -mt-2 -mb-4 font-bold">Pre Launch</p>
             <h3 className="text-3xl sm:text-4xl font-bold">ARABIAN MEHEK</h3>
             <p className="text-sm sm:text-base -mt-2">Not Made Here. Not Made Ordinary. 100% Imported Perfume</p>
-            <p className="text-base sm:text-lg mt-2">Subscribe now and claim your exclusive discount before launch.</p>
+            <p className="text-base sm:text-lg mt-2">Subscribe now to claim your discount coupon – Luxury is just a spray away</p>
             <h3 className="bg-gradient-to-r from-yellow-500 via-red-500 to-pink-500 text-transparent bg-clip-text text-2xl sm:text-3xl font-bold -mt-1">
               <span className="font-extrabold">20% OFF</span> Only for Pre-Subscribers
             </h3>
@@ -162,22 +163,22 @@ const Hero = () => {
 
         {/* Email Subscription Form */}
         <form onSubmit={handleSubscribe} className="w-full max-w-md mx-auto">
-          <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4 w-full">
+          <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4 w-fullm">
             <input
               type="email"
-              placeholder="Enter email to get 20% off"
+              placeholder="Enter email to get 20% off Coupon Code"
               value={email}
               onChange={(e) => {
                 setEmail(e.target.value);
                 setError("");
               }}
-              className="px-4 py-3 w-full rounded-full bg-white/20 border border-yellow-400 placeholder-white text-white focus:outline-none focus:ring-2 focus:ring-yellow-400 transition backdrop-blur-sm"
+              className="px-4 py-3 w-full  rounded-full bg-white/20 border border-yellow-400 placeholder-white text-white focus:outline-none focus:ring-2 focus:ring-yellow-400 transition backdrop-blur-sm placeholder:text-sm "
               aria-label="Enter your email"
             />
             <button
               type="submit"
               disabled={loading}
-              className="w-full sm:w-auto px-6 py-3 bg-yellow-400 hover:bg-yellow-500 text-black font-semibold rounded-full transition duration-300 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full sm:w-auto px-6 py-3 bg-yellow-400 hover:bg-yellow-500 text-black font-semibold rounded-full transition duration-300 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed "
             >
               {loading ? 'Loading...' : "Subscribe"}
             </button>
@@ -185,7 +186,7 @@ const Hero = () => {
         </form>
 
         <p className="text-sm md:text-base">
-          Don’t Just Wait for the Launch – <span className="underline">Subscribe & Save 20% Instantly</span>
+          Don’t Just Wait for the Launch – <span className="underline">Subscribe & Save 20% off Coupon Instantly</span>
         </p>
 
         {/* Error message display */}
@@ -199,14 +200,16 @@ const Hero = () => {
         <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
           <div className="relative bg-white text-black p-8 rounded-lg shadow-xl max-w-sm w-full text-center flex flex-col gap-4">
             <h3 className="text-xl sm:text-2xl font-bold">
-              Only Early Subscribers Get 20% OFF – Don’t Miss Your Chance to Own Authentic Arabian Perfume at a Special Price!
+            Thank You for Subscribing
+
             </h3>
             <p className="text-base sm:text-lg">
-              Use Your 20% Discount and Be Among the First to Experience Arabian Mehek.
+            We’re Grateful You Chose Luxury Your 20% Coupon Awaits on Your Mail
+
             </p>
             <div className="bg-yellow-100 border-2 border-yellow-400 rounded-lg py-3 px-6 text-2xl sm:text-3xl font-mono tracking-widest font-bold">
-              <h2>Thank you 🥳🥳🥳</h2>
-              <p>Congrates</p>
+              <h2>Your Exclusive Coupon Has Been Sent to Your Email</h2>
+              <p> Thank you 🥳🥳🥳</p>
             </div>
             <p className="text-sm text-gray-600">
               Use this code to avail a special offer on your first purchase.

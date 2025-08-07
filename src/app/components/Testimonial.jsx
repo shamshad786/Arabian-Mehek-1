@@ -8,7 +8,7 @@ import { Autoplay } from 'swiper/modules';
 const testimonials = [
     {
         id: 1,
-        quote: "This perfume truly exceeded my expectations. The fragrance is sophisticated, long-lasting, and has a luxurious charm that instantly uplifts your presence. It’s refreshing without being overpowering—perfect for daily wear or special occasions. ",
+        quote: "This perfume exceeded my expectations. The scent is elegant, long-lasting, and has a premium feel. It’s refreshing but not too strong, making it great for daily use or special events. A perfect blend of luxury and comfort. Truly impressed and satisfied!   ",
         name: "Kalim Shah",
         title: "Financial Adviser",
         avatar: "/kalim.jpg "
@@ -49,7 +49,7 @@ const Testimonial = () => {
           
             <div className="container mx-auto">
                 <h2 className="text-4xl font-extrabold text-gray-900 text-center mb-16">
-                    What Our Users Say
+                    Loved By Noses, Trusted By Hearts
                 </h2>
 
                 <Swiper
