@@ -24,8 +24,8 @@ const Hero = () => {
     }
 
     try {
-      const code = nanoid(3); 
-      const couponCode = `ARB${code.toUpperCase()}20OFF`;
+     
+      const couponCode = `ARBPRE20OFF`;
 
       const res = await axios.post('https://arb-mhk-coupon.onrender.com/api/v1/subscribe', {
         email: email,
@@ -112,7 +112,8 @@ const Hero = () => {
             >
               Continue to Site
             </button>
-          </div>
+            <h3 className="gradient-text-underline font-bold text-xl sm:text-xl -mt-1">  First Come, First Sprayed – Only 100 Bottles Available in Pre-Launch</h3>
+            </div>
         </div>
       )}
 
@@ -207,12 +208,12 @@ const Hero = () => {
             We’re Grateful You Chose Luxury Your 20% Coupon Awaits on Your Mail
 
             </p>
-            <div className="bg-yellow-100 border-2 border-yellow-400 rounded-lg py-3 px-6 text-2xl sm:text-3xl font-mono tracking-widest font-bold">
-              <h2>Your Exclusive Coupon Has Been Sent to Your Email</h2>
+            <div className="bg-yellow-100 border-2 border-yellow-400 rounded-lg py-3 px-6 text-xl sm:text-xl font-mono tracking-widest font-bold">
+              <h2>Your Discount Coupon Has Been Sent to Your Email</h2>
               <p> Thank you 🥳🥳🥳</p>
             </div>
             <p className="text-sm text-gray-600">
-              Use this code to avail a special offer on your first purchase.
+            Don’t Forget to Use Your Code During Pre-Order – Offer Valid Before Launch Only
             </p>
             <button
               onClick={closePopup}

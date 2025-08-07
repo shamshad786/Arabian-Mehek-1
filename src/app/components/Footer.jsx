@@ -10,13 +10,13 @@ const Footer = () => {
         <div className="flex flex-col items-center space-y-4">
             <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-widest">Stay in touch</h3>
             <div className="flex space-x-4">
-            <a href="https://www.facebook.com/profile.php?id=61578595799721" aria-label="Facebook" className="text-gray-500 hover:text-pink-500 transition-colors duration-200">
+            <a href="https://www.instagram.com/arabianmehek/" aria-label="Facebook" className="text-gray-500 hover:text-pink-500 transition-colors duration-200">
                 <FaInstagram size={24} />
               </a>
-              <a href="https://wa.link/olfd8b" aria-label="LinkedIn" className="text-gray-500 hover:text-green-400 transition-colors duration-200">
+              <a href="https://whatsapp.com/channel/0029VbAucr89hXFG689oxL3N" aria-label="LinkedIn" className="text-gray-500 hover:text-green-400 transition-colors duration-200">
                 <FaWhatsapp  size={24} />
               </a>
-              <a href="https://www.instagram.com/arabianmehek/" aria-label="Instagram" className="text-gray-500 hover:text-blue-500 transition-colors duration-200">
+              <a href="https://www.facebook.com/profile.php?id=61578595799721" aria-label="Instagram" className="text-gray-500 hover:text-blue-500 transition-colors duration-200">
                 <FaFacebookF size={24} />
               </a>
           

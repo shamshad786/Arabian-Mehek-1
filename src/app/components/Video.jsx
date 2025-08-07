@@ -15,7 +15,6 @@ const Video = () => {
   const [hoveredVideoId, setHoveredVideoId] = useState(null);
   const intervalRef = useRef(null);
 
-  // ✅ Updated scroll logic
   const startAutoSlide = () => {
     clearInterval(intervalRef.current);
     intervalRef.current = setInterval(() => {
@@ -41,17 +40,20 @@ const Video = () => {
   }, [isHovered]);
 
   return (
-    <div className="bg-white  flex flex-col items-center w-full justify-center">
+    <div className="bg-white flex flex-col items-center w-full justify-center">
       <div
-        className="relative w-full max-w-4x"
+        className="relative w-full max-w-4xl"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <div ref={sliderRef} className="flex gap-4 overflow-hidden p-10 justify-center ">
+        <div
+          ref={sliderRef}
+          className="flex gap-4 overflow-x-auto scroll-snap-x snap-x snap-mandatory scroll-smooth p-4 sm:p-10"
+        >
           {videos.map((video) => (
             <div
               key={video.id}
-              className="flex-none w-full sm:w-1/3 md:w-1/4 lg:w-1/5"
+              className="flex-none w-[90vw] sm:w-1/3 md:w-1/4 lg:w-1/4 5snap-center"
               onMouseEnter={() => {
                 setHoveredVideoId(video.id);
                 videoRefs.current[video.id]?.play();
@@ -61,7 +63,6 @@ const Video = () => {
                 const vid = videoRefs.current[video.id];
                 if (vid) {
                   vid.pause();
-
                   vid.currentTime = 0;
                 }
               }}
@@ -69,7 +70,7 @@ const Video = () => {
               <div className="relative group rounded-xl overflow-hidden shadow-lg transition-transform duration-300 transform hover:scale-105">
                 <video
                   ref={(el) => (videoRefs.current[video.id] = el)}
-                  className="w-full h-auto aspect-[9/15] object-cover  "
+                  className="w-100 h-auto aspect-[9/16] object-cover"
                   src={video.url}
                   controls
                   loop
@@ -87,7 +88,7 @@ const Video = () => {
       </div>
 
       <a
-        href="#"
+        href="https://www.instagram.com/arabianmehek/"
         className="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 font-medium rounded-lg text-base sm:text-lg md:text-xl px-5 py-3 mt-6 text-center"
       >
         Follow on Instagram

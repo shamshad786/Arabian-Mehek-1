@@ -22,7 +22,7 @@ const ContinuousSlider = () => {
         {`
         @keyframes slide {
           0% { transform: translateX(0%); }
-          100% { transform: translateX(-99%); }
+          100% { transform: translateX(-320%); }
         }
         `}
       </style>
@@ -116,6 +116,7 @@ const Countdown = () => {
 
 
       {/* Title with responsive font sizes and margins. */}
+      
       <h2 className="text-xl sm:text-2xl md:text-3xl font-bold leading-tight max-w-5xl animate-pop-in my-6 md:my-10 px-2">
   Your Signature Scent Shouldn’t Be Local — It Should Be Legendary{' '}
 </h2>
@@ -127,6 +128,8 @@ const Countdown = () => {
       {/* The ContinuousSlider component is now placed here */}
       <ContinuousSlider />
         {/* Subtitle with responsive font sizes and margins. */}
+ 
+
         <h3 className="text-sm sm:text-base md:text-xl text-lime-950 max-w-3xl animate-pop-in font-semibold mb-6 md:mb-10 px-2">
         <span className="bg-gradient-to-l from-purple-500 via-orange-500 to-yellow-500 text-transparent bg-clip-text">Arabian Mehek</span> is coming soon and the <span className='text-4xl'> countdown </span>has begun <br />
         Be the First to Smell the Difference{' '}
@@ -168,14 +171,15 @@ const Countdown = () => {
 
 
 
-     <h3 className="text-sm sm:text-base md:text-xl text-lime-950 max-w-3xl animate-pop-in mb-6 md:mb-10 px-2 flex items-center gap-2 flex-wrap">
+         <h3 className="text-sm sm:text-base md:text-xl text-lime-950 max-w-3xl animate-pop-in mb-6 md:mb-10 px-2 flex items-center justify-center text-center gap-2 flex-wrap">
   Be the First to Smell the Difference{" "}
-  <a href="https://wa.link/olfd8b"> <span className="bg-gradient-to-r from-yellow-500 via-red-500 to-pink-500 text-transparent bg-clip-text text-xl sm:text-2xl font-semibold">
-    Book your pre order
-  </span></a>
- 
+  <a href="https://wa.link/olfd8b">
+    <span className="bg-gradient-to-r from-yellow-500 via-red-500 to-pink-500 text-transparent bg-clip-text text-xl sm:text-2xl font-semibold">
+      Book your pre order
+    </span>
+  </a>
   <a href="https://wa.link/olfd8b" target="_blank" rel="noopener noreferrer">
-    <FaWhatsapp className="text-pink-500 text-2xl sm:text-3xl" />
+    <FaWhatsapp className="text-pink-500 text-3xl sm:text-5xl" />
   </a>
 </h3>
 

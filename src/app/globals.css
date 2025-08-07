@@ -141,4 +141,37 @@ svg text {
     }
   }
 
+  /*  Pop up animation text */
+  @keyframes gradientX {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+  
+  .gradient-text-underline {
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(to right, #1578fa, #ef4444, #ec4899); /* blue, red, pink */
+    background-size: 200% 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradientX 4s ease infinite;
+  }
+  
+  .gradient-text-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px; /* 👈 Increase this value to increase gap */
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, #1578fa, #ef4444, #ec4899);
+    background-size: 200% 200%;
+    animation: gradientX 4s ease infinite;
+    border-radius: 2px;
+  }
   
