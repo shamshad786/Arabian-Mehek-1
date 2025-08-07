@@ -206,7 +206,7 @@ const Hero = () => {
             </p>
             <div className="bg-yellow-100 border-2 border-yellow-400 rounded-lg py-3 px-6 text-2xl sm:text-3xl font-mono tracking-widest font-bold">
               <h2>Thank you 🥳🥳🥳</h2>
-              {verificationCode && <p className="mt-2 text-xl sm:text-2xl">{verificationCode}</p>}
+              <p>Congrates</p>
             </div>
             <p className="text-sm text-gray-600">
               Use this code to avail a special offer on your first purchase.

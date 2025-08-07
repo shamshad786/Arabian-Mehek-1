@@ -33,7 +33,7 @@ const Video = () => {
   }, [isHovered]);
 
   return (
-    <div className="bg-white p-2 flex flex-col items-center w-full ">
+    <div className="bg-white p-2 flex flex-col items-center w-full  ">
       <div
         className="relative w-full max-w-5xl"
         onMouseEnter={() => setIsHovered(true)}

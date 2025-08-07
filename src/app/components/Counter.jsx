@@ -153,10 +153,11 @@ const Countdown = () => {
         </div>
 
         {/* Seconds timer box */}
-        <div className="flex flex-col items-center p-6 sm:p-8 bg-gray-200 rounded-xl backdrop-blur-md min-w-[70px] sm:min-w-[90px] md:min-w-[110px] animate-pop-in shadow-md hidden lg:block">
-          <span className="text-3xl sm:text-4xl md:text-5xl font-extrabold">{timeLeft.seconds}</span>
-          <span className="text-xs sm:text-sm mt-1 uppercase text-gray-600">Seconds</span>
-        </div>
+        <div className="flex flex-col items-center p-6 sm:p-8 bg-gray-200 rounded-xl backdrop-blur-md w-[70px] sm:w-[90px] md:w-[110px] animate-pop-in shadow-md">
+  <span className="text-3xl sm:text-4xl md:text-5xl font-extrabold">{timeLeft.seconds}</span>
+  <span className="text-xs sm:text-sm mt-1 uppercase text-gray-600">Seconds</span>
+</div>
+
       </div>
 
       {/* text */}
