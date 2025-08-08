@@ -174,17 +174,15 @@ const Countdown = () => {
 
 
 
-         <h3 className="text-sm sm:text-base md:text-xl text-lime-950 max-w-3xl animate-pop-in mb-6 md:mb-10 px-2 flex items-center justify-center text-center gap-2 flex-wrap">
- Buy Your Product {" "}
+         <h3 className="text-sm sm:text-base md:text-xl text-pink-500 max-w-3xl animate-pop-in mb-6 md:mb-10 px-2 flex items-center justify-center text-center gap-2 flex-wrap">     Beat the Rush – Pre-Order Now & Save 20% Off Before It’s Gone.
+{" "}
   <a href="https://wa.link/olfd8b">
-    <span className="bg-gradient-to-r from-yellow-500 via-red-500 to-pink-500 text-transparent bg-clip-text text-xl sm:text-2xl font-semibold">
-      Book your pre order
-    </span>
+
   </a>
  
 </h3>
 
-<Link href="/product"  className="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 font-medium rounded-lg text-base sm:text-lg md:text-xl px-5 py-3 mt-6 text-center"> Buy Your Product </Link>
+<Link href="/product"  className="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 font-medium rounded-lg text-base sm:text-lg md:text-xl px-5 py-3 mt-6 text-center"> Pre Order Now</Link>
 
 
 
