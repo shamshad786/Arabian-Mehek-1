@@ -32,7 +32,7 @@ const testimonials = [
         quote: "This perfume is elegant, long-lasting, and subtly luxurious. It’s not too strong but makes a clear impression. Works well for daily wear or special occasions. I didn’t expect to love it this much. Definitely a go-to scent now. Recommended!",
         name: "Md Azad",
         title: "Digital Marketer",
-        avatar: "/Azad.jpg"
+        avatar: "/azad.jpg"
     },
     {
         id: 5,

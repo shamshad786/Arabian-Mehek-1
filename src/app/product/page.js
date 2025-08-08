@@ -11,11 +11,10 @@ const products = Array.from({ length: 18 }, (_, i) => ({
   image: ['/Sabaya.webp', '/Darham.webp', '/Ameer.webp'][i % 3],
 }));
 
-const ProductCard = ({ product, addToCart }) => {
-  const [quantity, setQuantity] = useState(0);
-
-  const increaseQty = () => setQuantity(prev => prev + 1);
-  const decreaseQty = () => setQuantity(prev => (prev > 0 ? prev - 1 : 0));
+// ProductCard Component
+const ProductCard = ({ product, cartQuantity, updateCart }) => {
+  const increaseQty = () => updateCart(product, 1);
+  const decreaseQty = () => updateCart(product, -1);
 
   return (
     <div className="bg-white text-black p-5 shadow-md hover:shadow-lg transition-shadow rounded-2xl flex flex-col items-center border border-gray-200">
@@ -31,23 +30,14 @@ const ProductCard = ({ product, addToCart }) => {
 
       <div className="flex items-center gap-3 mt-4 border border-gray-300 rounded-full px-4 py-1">
         <button onClick={decreaseQty} className="text-lg font-bold text-gray-700 hover:text-black transition">-</button>
-        <span className="font-semibold text-black">{quantity}</span>
+        <span className="font-semibold text-black">{cartQuantity || 0}</span>
         <button onClick={increaseQty} className="text-lg font-bold text-gray-700 hover:text-black transition">+</button>
       </div>
-
-      <button
-        onClick={() => quantity > 0 && addToCart(product, quantity)}
-        className={`mt-5 w-full py-2 rounded-lg transition text-white ${
-          quantity > 0 ? 'bg-black hover:bg-gray-800' : 'bg-gray-300 cursor-not-allowed'
-        }`}
-        disabled={quantity === 0}
-      >
-        Add to Cart
-      </button>
     </div>
   );
 };
 
+// ProductPage Component
 const ProductPage = () => {
   const [cart, setCart] = useState([]);
   const [showModal, setShowModal] = useState(false);
@@ -58,48 +48,78 @@ const ProductPage = () => {
     email: '',
     coupon: '',
   });
+  const [discount, setDiscount] = useState(0);
 
-  const addToCart = (product, quantity) => {
+  const updateCart = (product, quantityChange) => {
     setCart(prev => {
       const existing = prev.find(item => item.id === product.id);
+
       if (existing) {
+        const newQuantity = existing.quantity + quantityChange;
+
+        if (newQuantity <= 0) {
+          return prev.filter(item => item.id !== product.id);
+        }
+
         return prev.map(item =>
-          item.id === product.id ? { ...item, quantity: item.quantity + quantity } : item
+          item.id === product.id ? { ...item, quantity: newQuantity } : item
         );
+      } else if (quantityChange > 0) {
+        return [...prev, { ...product, quantity: quantityChange }];
       }
-      return [...prev, { ...product, quantity }];
+
+      return prev;
     });
   };
 
-  const handleInputChange = e => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const getProductQuantity = (productId) => {
+    const item = cart.find(i => i.id === productId);
+    return item ? item.quantity : 0;
   };
 
-  const calculateTotal = () => {
-    const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-    const discount = formData.coupon.toLowerCase() === '20off' ? subtotal * 0.2 : 0;
-    const total = subtotal - discount;
-    return { subtotal, discount, total };
+  const handleInputChange = e => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+
+    if (name === 'coupon') {
+      setDiscount(value === 'ARBPRE20' ? 0.2 : 0);
+    }
+  };
+
+  const getTotal = () => {
+    const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    return total - total * discount;
   };
 
   const handleCheckout = () => {
-    const { subtotal, discount, total } = calculateTotal();
-    console.log('Checkout Info:', formData, cart, { subtotal, discount, total });
-    alert(`Order Placed!\nTotal: $${total.toFixed(2)}`);
+    const { name, address, phone, email } = formData;
+    if (!name || !address || !phone || !email) {
+      alert('Please fill in all required fields.');
+      return;
+    }
+
+    alert(`Proceeding to payment of $${getTotal().toFixed(2)} with Razorpay...`);
+
     setCart([]);
     setFormData({ name: '', address: '', phone: '', email: '', coupon: '' });
+    setDiscount(0);
     setShowModal(false);
   };
 
-  const { subtotal, discount, total } = calculateTotal();
-
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 py-12 px-4 sm:px-6">
-     <h2 className="w-full text-center text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-l from-purple-500 via-orange-500 to-yellow-500 text-transparent bg-clip-text leading-tight px-4 break-words -m-5 mb-5">  Arabian Mehek is Coming </h2>
+      <h2 className="text-center text-4xl sm:text-5xl font-bold text-black mb-10">
+        Arabian Mehek is Coming
+      </h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 max-w-7xl mx-auto">
         {products.map(product => (
-          <ProductCard key={product.id} product={product} addToCart={addToCart} />
+          <ProductCard
+            key={product.id}
+            product={product}
+            cartQuantity={getProductQuantity(product.id)}
+            updateCart={updateCart}
+          />
         ))}
       </div>
 
@@ -129,23 +149,25 @@ const ProductPage = () => {
               </div>
             ))}
 
-            <div className="mt-4 text-black">
-              <p className="text-sm">Subtotal: ${subtotal.toFixed(2)}</p>
-              {discount > 0 && <p className="text-sm text-green-600">Discount (20%): -${discount.toFixed(2)}</p>}
-              <p className="font-semibold">Total: ${total.toFixed(2)}</p>
+            <div className="mt-6 space-y-4">
+              <input name="name" placeholder="Your Name" value={formData.name} onChange={handleInputChange} className="w-full border border-gray-300 rounded-md px-4 py-2 text-black" />
+              <input name="address" placeholder="Delivery Address" value={formData.address} onChange={handleInputChange} className="w-full border border-gray-300 rounded-md px-4 py-2 text-black" />
+              <input name="phone" placeholder="Phone Number" value={formData.phone} onChange={handleInputChange} className="w-full border border-gray-300 rounded-md px-4 py-2 text-black" />
+              <input type="email" name="email" placeholder="Email Address" value={formData.email} onChange={handleInputChange} className="w-full border border-gray-300 rounded-md px-4 py-2 text-black" />
+              <input name="coupon" placeholder="Enter Coupon (if any)" value={formData.coupon} onChange={handleInputChange} className="w-full border border-gray-300 rounded-md px-4 py-2 text-black" />
             </div>
 
-            <div className="mt-6 space-y-4">
-              <input type="text" name="name" value={formData.name} onChange={handleInputChange} placeholder="Name" className="w-full border border-gray-300 rounded-md px-4 py-2 text-black placeholder-gray-500" />
-              <input type="text" name="address" value={formData.address} onChange={handleInputChange} placeholder="Address" className="w-full border border-gray-300 rounded-md px-4 py-2 text-black placeholder-gray-500" />
-              <input type="text" name="phone" value={formData.phone} onChange={handleInputChange} placeholder="Phone Number" className="w-full border border-gray-300 rounded-md px-4 py-2 text-black placeholder-gray-500" />
-              <input type="email" name="email" value={formData.email} onChange={handleInputChange} placeholder="Email Address" className="w-full border border-gray-300 rounded-md px-4 py-2 text-black placeholder-gray-500" />
-              <input type="text" name="coupon" value={formData.coupon} onChange={handleInputChange} placeholder="Enter Coupon (try '20OFF')" className="w-full border border-gray-300 rounded-md px-4 py-2 text-black placeholder-gray-500" />
+            <div className="mt-4 text-black text-right font-semibold">
+              Total: ${getTotal().toFixed(2)} {discount > 0 && <span className="text-green-600">(20% OFF)</span>}
             </div>
 
             <div className="flex justify-between items-center mt-6">
-              <button onClick={() => setShowModal(false)} className="text-gray-600 hover:text-black transition">Cancel</button>
-              <button onClick={handleCheckout} className="bg-black text-white px-6 py-2 rounded-md hover:bg-gray-800 transition">Pay ${total.toFixed(2)}</button>
+              <button onClick={() => setShowModal(false)} className="text-gray-600 hover:text-black transition">
+                Cancel
+              </button>
+              <button onClick={handleCheckout} className="bg-black text-white px-6 py-2 rounded-md hover:bg-gray-800 transition">
+                Pay
+              </button>
             </div>
           </div>
         </div>

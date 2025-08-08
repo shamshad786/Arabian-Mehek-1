@@ -25,7 +25,7 @@ const Hero = () => {
 
     try {
      
-      const couponCode = `ARBPRE20OFF`;
+      const couponCode = `ARBPRE20`;
 
       const res = await axios.post('https://arb-mhk-coupon.onrender.com/api/v1/subscribe', {
         email: email,
