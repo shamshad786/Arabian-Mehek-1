@@ -182,7 +182,7 @@ const Countdown = () => {
  
 </h3>
 
-<Link href="/product"  className="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 font-medium rounded-lg text-base sm:text-lg md:text-xl px-5 py-3 mt-6 text-center"> Pre Order Now</Link>
+<Link href="/"  className="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 font-medium rounded-lg text-base sm:text-lg md:text-xl px-5 py-3 text-center -mt-5"> Pre Order Now</Link>
 
 
 
